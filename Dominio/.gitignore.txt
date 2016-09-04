@@ -1,0 +1,10 @@
+/target/
+/.settings/
+/.idea/
+
+.project
+.classpath
+.settings
+Dominio.iml
+
+/bin/

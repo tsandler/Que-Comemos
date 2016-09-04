@@ -1,0 +1,16 @@
+<body>
+	<h3 align="center">Nueva Receta</h3>
+	<form ng-submit="builder.crearReceta()">
+		<div align="center">
+			<div class="filtro">
+				<label for="ex1">Nombre</label>
+				<input type="text" class="form-control" ng-model="builder.nombre" id="ex1" class="filtroingredientes" required>
+				<label for="ex2">Calorias</label>
+				<input class="form-control" id="ex2" type="text" ng-model="builder.calorias" required>
+			</div>
+			<div class="form-group col-lg-6" align="center">
+                <button class="btn btn-primary" type="submit">Siguiente Paso</button>
+            </div>
+		</div>
+	</form>
+</body>

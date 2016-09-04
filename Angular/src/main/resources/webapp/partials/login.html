@@ -1,0 +1,28 @@
+<h3 id="loginText">Login</h3>
+<h2></h2>
+<div class="container">
+    <form name="LogueoForm"
+          ng-submit="login.autenticar(LogueoForm)"
+          class="form-horizontal">
+        <div class="alert alert-danger col-lg-6" ng-show="login.errorMessage">{{login.errorMessage}}</div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <div class="form-group">
+            <div class="col-lg-6">
+                <label for="usuario">Usuario:</label>
+                <input class="form-control" ng-model="login.usuario" id="usuario" placeholder="Usuario">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-6">
+                <label for="password">Password:</label>
+                <input class="form-control" ng-model="login.password" type="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group col-lg-6" align="center">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+<h6>No tenes usuario? <a ui-sref="registro">Registrate ahora!</a></h6>

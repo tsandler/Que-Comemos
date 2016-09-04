@@ -1,0 +1,20 @@
+<div>
+         <h2><a>{{Recetas.titulo}}</a></h2>
+         <br>
+        <div ng-if="Recetas.verBusqueda" ng-include src="'/partials/busquedaRecetas.html'"></div>
+         <h2 ng-if="Recetas.recetas.length == 0">No hay recetas para mostrar</h2><br><br>
+
+        <tabla-recetas ng-if="!(Recetas.recetas.length == 0)"></tabla-recetas>
+
+        <div align="left">
+            <button type="button" class="btn btn-primary" ng-if="!Recetas.verMonitoreo && !Recetas.verBusqueda" ui-sref="nuevaReceta">Nueva Receta</button>
+        </div>
+        <div align="center">
+            <button type="button" class="btn btn-primary" ng-if="Recetas.verMonitoreo" ng-click="Recetas.getRecetas()">Actualizar</button>
+        </div>
+        <div ng-if="Recetas.verTodas && !Recetas.verMonitoreo && !Recetas.verBusqueda" align="right"><a ui-sref="verRecetasFavoritas">Ver solo recetas favoritas</a></div>
+        <div ng-if="Recetas.verFavoritas && !Recetas.verMonitoreo" align="right"><a ui-sref="verRecetas">Ver todas las recetas</a></div>
+</div>
+
+
+

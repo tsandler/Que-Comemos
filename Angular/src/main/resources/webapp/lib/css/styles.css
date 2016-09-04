@@ -1,0 +1,310 @@
+body {
+	background-color:#EEF6FF;
+}
+
+
+h1{
+	margin-top: 3%;
+	margin-left: 43%;
+	font-size: 75px;
+	font-weight: bold;
+
+}
+h2{
+	text-align: center;
+	margin-top: 15%;
+	font-size: 20px;
+	font-weight: bold;
+	text-indent: black;
+	cursor: pointer;
+
+}
+h3{
+	margin-top: 2%;
+	margin-left: 3%;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+h4{
+	margin-top: 3%;
+	margin-left: 3%;
+	font-size: 20px;
+	border: 2px solid black;
+	height: 80%;
+	width: 96.1%;
+} 
+
+textarea{
+	width:400px;
+	height:100px;
+	border: 2px solid #990000;
+}
+
+.stroke {
+	-webkit-text-fill-color: #5EA7CC;
+	-webkit-text-stroke: 2px black;
+}
+
+thaa{
+	text-align: center;
+	font-size: 20px;
+	border-left: 3px solid grey;
+	border-bottom: 5px solid grey;
+	border-right: 5px solid grey;
+
+}
+
+td{
+	border-top: 1px;
+	border-left: 1px;
+	border-right: 1px;
+	text-align: center;
+	width: auto;
+}
+
+.clickable-row:hover {
+   background-color: lightblue;
+}
+.clickable-row{
+	background-color:  #A9D4FF;
+}
+.buttonHighlightBackground{
+	background-color: #FFFFFF;
+	border-width: medium;
+	border-color: gray;
+}		
+.tablaRecetas{
+	background-color: white;
+	background-position: center;
+	opacity: .95;
+	position: absolute;
+	top: 35%;
+	width: 80%;
+	left: 10%;
+	border: 5px solid grey;
+	border-right: 5px;
+
+}
+
+.tablaRecetas td {
+    cursor: pointer;
+}
+
+#leftBar {
+	background-color: #A9D4FF;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+    width: 20%;
+    height: 100%;
+	border: 3px solid #5EA7CC;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#profile-image{
+	margin-top: 5%;
+	margin-left: 5%;
+	height: 80px;
+	width: 90px;
+}
+
+.tablaPrincipal{
+	border-width:1px;
+	border-bottom-style: solid;
+	border-color:black;
+	
+	height: 20px;
+	width: 70px;
+	
+	margin-top: 30px;
+	margin-left: 55px;
+}
+
+.tablaExpandida{
+	background-color: #F3E2A9;
+	background-position: center;
+	position: relative;
+	width: 80%;
+	left: 10%;
+	border: 3px solid grey;
+	border-spacing:inherit;
+
+}
+.table-bordered{
+	background-color:#85C2FF;
+	border:4px solid #78AFE6;
+	height: 20px;
+	width: 10px;
+	
+	margin-top: 3px;
+	margin-left: 35px;
+}
+
+.navbar-nav{
+	height: 20%;
+	width: 50%;
+
+}
+
+.btn-primary{
+	margin-left: 40px;
+	text-align: center;
+	vertical-align: center;
+}
+.barraCondicionesPreexistentes{
+	width: 60%;
+	float: right;
+	margin-top: -20%;
+	margin-right: -15%;
+}
+
+.list-group{
+	width: 30%;
+	height: 20%;
+	margin-left: 5%;
+	margin-top: -10%;
+}
+
+.ppreparacion{
+	width: 80%;
+	height: 30%;
+	margin-left: 7%;
+	margin-top:0%;
+
+}
+
+.filtro{
+	border: 1px solid #d0d0d0;
+	border-color: #666666;
+	width: 60%;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	background: #78AFE6;
+}
+
+.filtroIngredientes{
+	width:200px;
+}
+
+.buscarIngredientes{
+ 	font-weight: bolder;
+
+}
+.tablaIngredientes {
+	padding-top: 3%;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+
+.tablaIngredientes td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+.col-xs-3{
+	margin-top: 0%;
+	margin-left: 7%;
+}
+
+.col-xs-2{
+	margin-left: -25%;
+	margin-top: 15%;
+}
+
+.valor-normal{
+	color:#008000;
+}
+
+.valor-superior{
+	color:#FF0000;
+}
+
+.valor-inferior{
+	color:#FFA500;
+}
+
+#vista{
+	position: absolute;
+	left: 28%;
+	width: 60%;
+}
+
+#loginText{
+	position: relative;
+	left: 40%;
+	top: 10%;
+}
+
+#dificultad{
+	width: 280px;
+    margin-left: 30px;
+}
+
+#temporada{
+	width: 280px;
+    margin-right: 45px;
+}
+
+.labelLeft {
+    display:inline-block;
+    *display: inline; 
+    zoom:2;              
+    float: left;
+    padding-top: 5px;
+    text-align: left;
+    width: 180px;
+    margin-left: 5%;
+}
+
+.labelRight {
+    display:inline-block;
+    *display: inline; 
+    zoom:2;              
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+    width: 140px;
+    margin-left: 15%;
+}
+
+.labelLeft2 {
+    display:inline-block;
+    *display: inline; 
+    zoom:2;              
+    float: left;
+    padding-top: 5px;
+    text-align: left;
+    width: 140px;
+    margin-left: 5%;
+}
+
+.labelRight2 {
+    display:inline-block;
+    *display: inline; 
+    zoom:2;              
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+    margin-left: 15%;
+}
+
+.listaDespL{
+	margin-top: 0%;
+	margin-left: 7%;
+}
+
+.listaDespR{
+	margin-top: 0%;
+	margin-left: 0%;
+}

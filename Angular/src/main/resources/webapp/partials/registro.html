@@ -1,0 +1,119 @@
+<h3 id="loginText">Registro</h3>
+<h2></h2>
+<div class="container">
+    <form ng-submit="registro.registrar()">
+        <div ng-class="['alert', 'col-lg-6', registro.result]"  id="result" ng-show="registro.answer">{{registro.answer}}</div>
+        <h6 class="alert alert-danger col-lg-6" ng-show="registro.errores.length > 0" ng-repeat="error in registro.errores">
+            {{error}}
+        </h6>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" ng-model="registro.nombre" placeholder="Usuario">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    <input type="password" class="form-control" ng-model="registro.password" placeholder="Password">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                    <input type="email" class="form-control" ng-model="registro.mail" placeholder="E-Mail">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-heart-empty"></span></span>
+                    <div class="col-xs-15">
+                        <select class="form-control selectpicker" ng-model="registro.sexo">
+                            <option value="Masculino" ng-selected="true">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-arrow-up"></span></span>
+                    <input type="text" class="form-control" ng-model="registro.altura" placeholder="Altura">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-warning-sign"></span></span>
+                    <input type="text" class="form-control" ng-model="registro.peso" placeholder="Peso">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    <input type="text" class="form-control fecha" ng-model="registro.fecha" placeholder="Fecha de Nacimiento (dd-mm-aaaa)">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-refresh"></span></span>
+                    <div class="col-xs-15">
+                        <select class="form-control selectpicker" ng-model="registro.rutina">
+                            <option value="0" ng-selected="registro.rutina == 0">Rutina</option>
+                            <option value="NADA">Sedentaria con nada de ejercicio</option>
+                            <option value="LEVE">Sedentaria con algo de ejercicio</option>
+                            <option value="MEDIANO">Sedentaria con ejercicio</option>
+                            <option value="INTENSIVOSIN">Activa sin ejercicio adicional</option>
+                            <option value="INTENSIVOCON">Activa con ejercicio adicional</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-8" align="center">
+                <h3>Condiciones Preexistentes</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4" ng-controller="CondicionesPreexistentesCtrl as condiciones">
+                <select multiple="multiple" class="form-control" ng-model="registro.condicionesPosibles">
+                    <option ng-repeat="condicion in condiciones.condiciones" value="{{condicion.nombre}}">{{condicion.nombre}}</option>
+                </select>
+            </div>
+            <div class="col-xs-4" ng-controller="CondicionesPreexistentesCtrl as condiciones">
+                <select multiple="multiple" class="form-control">
+                    <option ng-repeat="condicion in registro.condiciones" value="{{condicion}}">{{condicion}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4" align="center">
+                <button class="btn btn-primary" type="button" ng-click="registro.agregarCondicion()" >Agregar condicion</button>
+            </div>
+            <div class="col-xs-4" align="center">
+                <button class="btn btn-primary" type="button" ng-click="registro.eliminarCondiciones()">Vaciar condiciones</button>
+            </div>
+        </div>
+        <br>
+        <div class="form-group col-xs-7" align="center">
+            <button class="btn btn-primary" type="submit" >Aceptar</button>
+            <button class="btn btn-primary" type="reset">Cancelar</button>
+        </div>
+    </form>
+</div>
+<h6><a ui-sref="login">Ir al logueo</a></h6>

@@ -1,0 +1,24 @@
+<table id="tablaPrincipal" class="table table-striped">
+    <thead>
+    <tr>
+        <th width="20">Tipo</th>
+        <th width="150">Nombre</th>
+        <th width="30">Calorías</th>
+        <th width="50">Dificultad</th>
+        <th width="50">Temporada</th>
+        <th ng-if="Recetas.verMonitoreo" width="20">Consultas</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr class='clickable-row'  ng-repeat="receta in Recetas.recetas | limitTo: 'quantity' | orderBy: ['-consultas', 'nombrePlato']">
+        <td ng-if="receta.privada"><img alt="Receta privada" src="/images/private.gif" height="15" width="15"></td>
+        <td ng-if="!receta.privada"><img alt="Receta publica" src="/images/public.gif" height="15" width="15"></td>
+        <td > <span class="glyphicon glyphicon-cutlery"></span> <a ui-sref="detalleDeReceta({nombre: receta.nombrePlato})"> {{receta.nombrePlato}} </a></td>
+        <td>{{receta.calorias}}</td>
+        <td>{{receta.dificultadPreparacion}}</td>
+        <td>{{receta.temporadaCorrespondiente}}</td>
+        <td ng-if="Recetas.verMonitoreo">{{receta.consultas}}</td>
+    </tr>
+    </tbody>
+</table>

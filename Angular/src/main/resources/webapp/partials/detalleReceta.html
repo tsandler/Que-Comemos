@@ -1,0 +1,113 @@
+
+<body>
+	<div>
+	   	<h3> {{receta.receta.nombrePlato}}</h3>
+		  <h4>{{receta.receta.calorias}} calor&#237;as, creado por {{receta.receta.nombreUsuario}}</h4>
+	 </div>
+		
+	 <div class="row">
+	 	<label class="labelLeft">Dificultad</label>
+	    <label class="labelRight">Temporada</label>
+	 </div>	
+
+     <div class="row">
+     
+     	<div ng-switch on="receta.receta">
+    		<div ng-if="receta.receta.privada">
+    			<div class="col-xs-3" id="dificultad">
+		        	<select class="form-control selectpicker" ng-model="receta.receta.dificultadPreparacion">
+		                <option value="Facil">F&aacute;cil</option>
+		                <option value="Media">Media</option>
+		                <option value="Dificil">Dificil</option>
+		            </select>
+        		</div> 
+     		</div>
+    		<div ng-if="!receta.receta.privada">
+    			<label style="margin-left: 7%;">{{receta.receta.dificultadPreparacion}}</label>
+    		</div>
+	 	</div>
+     
+     	<div ng-switch on="receta.receta">
+    		<div ng-if="receta.receta.privada">
+				 <div class="col-xs-3" id="temporada">
+		        	<select class="form-control selectpicker" style="margin-left: 70%;" ng-model="receta.receta.temporadaCorrespondiente">
+		                <option value="Verano">Verano</option>
+		                <option value="Otonio">Oto&#241;o</option>
+		                <option value="Invierno">Invierno</option>
+		                <option value="Primavera">Primavera</option>
+		            </select>
+        		</div>
+        	</div> 
+     	
+    		<div ng-if="!receta.receta.privada">
+    			<label style="margin-left: 83%;">{{receta.receta.temporadaCorrespondiente}}</label>
+    		</div>
+    	</div>
+	 </div>        
+    
+    <br>
+    <br>
+	<div class="row">
+		<label class="labelLeft2">&nbsp;Ingredientes</label>
+		<label class="labelRight2">Condiciones Inadecuadas</label>
+	</div>
+	 <br>
+	 <div class="row">
+	      <table class="table table-bordered">
+	        <tr>
+	          <th>Dosis</th>
+	          <th>Ingrediente</th>
+	          <th></th>
+	        </tr>
+	        <tr ng-repeat="ingrediente in receta.ingredientes">
+	          <td>{{ingrediente.cantidad}}</td>
+	          <td>{{ingrediente.nombre}}</td>
+	          <td ng-if="receta.receta.privada">
+	              <button type="button" class="btn btn-primary" ng-click="receta.eliminarIngrediente(ingrediente.nombre)">
+	                  Eliminar
+	              </button>
+	          </td>
+	        </tr>
+	      </table>
+	      
+      
+	     <div ng-switch on="receta.receta">
+	    	<div ng-if="receta.receta.privada">
+	        	<button type="button" class="btn btn-primary" ng-click="receta.nuevoIngrediente()">Agregar</button>
+		    </div>
+	     </div>
+	      <div class="barraCondicionesPreexistentes" style="float: right;">
+	        <ul class="list-group" >
+	          <li class="list-group-item" ng-repeat="condicion in receta.condicionesPreexistentes">{{condicion.nombre}}</li>
+	        </ul>
+	
+	      </div>
+
+    </div>
+
+    <div>
+   	 <br>
+     <input type="checkbox" style= "margin-left: 5%;" class="large" ng-model="receta.receta.favorita">
+     <label>Favorita</label>
+    </div>
+
+    <div>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;Proceso de Preparacion</h3>
+      
+     <div ng-switch on="receta.receta">
+    	<div ng-if="receta.receta.privada">
+    		<textarea class="ppreparacion" ng-model="receta.receta.explicacionPreparacion">{{receta.receta.explicacionPreparacion}}</textarea>
+     	</div>
+    	<div ng-if="!receta.receta.privada">
+    		<textarea class="ppreparacion" ng-model="receta.receta.explicacionPreparacion"  readonly>{{receta.receta.explicacionPreparacion}}</textarea>
+    	</div>
+	 </div>
+      
+    </div>
+
+    <div class="row">
+    		<span style="margin-left: 40%;">
+     	 	<button type="button" class="btn btn-primary" ng-click="receta.actualizar()">{{receta.labelBoton}}</button></span>
+	</div>     
+    
+</body>

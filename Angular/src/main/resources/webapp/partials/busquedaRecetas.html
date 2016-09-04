@@ -1,0 +1,81 @@
+<form class="well well-lg" name="searchForm">
+        
+        <div class="row">
+          	<div class="col-md-6">
+            	<h5><b>Nombre</b></h5>
+        	</div>
+        
+        	<div class="col-md-6">
+          		<h5><b>Calorias</b></h5>
+           	</div>
+        </div>
+        
+        <div class="row">
+        
+        	<div class="col-md-6">
+			    <input type="text" ng-model="Recetas.nombreBuscado">
+        	</div>
+        	
+        	<div class="col-md-1">
+        		<label>de</label>
+        	</div>
+        		   	
+           	<div class="col-md-2">
+            	<input class="form-control" type="text" ng-model="Recetas.caloriasMin">
+            </div>
+            
+            <div class="col-md-1">
+            	<label>a</label>
+            </div>	
+            <div class="col-md-2">
+	            <input class="form-control" type="text" ng-model="Recetas.caloriasMax">
+        	</div>
+        </div>
+        
+        
+     
+      	<div class="row">
+        
+	        <div class="col-md-6">
+	          <h5><b>Dificultad</b></h5>
+	            <select name="dificultad" ng-model="Recetas.dificultadBuscada">
+	           		<option value=""></option>
+	           		<option value="Facil">Facil</option> 
+	           		<option value="Media">Media</option> 
+	           		<option value="Dificil">Dificil</option>
+	        	</select> 
+	        </div>
+        
+	        <div class="col-md-6">
+	          <h5><b>Temporada</b></h5>
+	        	<select name="temporada" ng-model="Recetas.temporadaBuscada">
+	           		<option value=""></option>
+	           		<option value="Verano">Verano</option> 
+	           		<option value="Otonio">Oto&ntildeo</option> 
+	           		<option value="Primavera">Primavera</option>
+	           		<option value="Invierno">Invierno</option>
+	        	</select>
+	        </div>  
+      	</div>
+      	
+      <div class="row">
+        
+        <div class="col-md-6">
+          <h5><b>Que contenga ingrediente</b></h5>
+       		<input type="text" ng-model="Recetas.conIngrediente">
+        </div>
+        
+        <div class="col-md-6">
+          <h5></h5>
+          <input type="checkbox" ng-model="Recetas.aplicaFiltro"><label>aplicar filtros del perfil de usuario</label>
+        </div>           
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-12" style="left: 40%"> 
+    		<h5></h5>
+    		<button type="Buscar" type="submit" ng-click="Recetas.buscarRecetas()">Buscar</button>
+        	<button type="Volver" type="submit" ng-click="Recetas.getRecetas()">Limpiar</button>
+        </div>	 
+       </div>
+  </form>

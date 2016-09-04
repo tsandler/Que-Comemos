@@ -1,0 +1,135 @@
+<body>
+	<!-- 1ST ROW -->
+	<div class="row">
+		<div>
+			<h4 style="margin-left: 2%"><span class="glyphicon glyphicon-user" style="width: 2%"></span>
+			<b>&nbsp;&nbsp;Mi Perfil</b></h4>
+		</div>	
+	</div>
+	
+	<form class="well well-lg" >	
+		<div class="row">
+			<div class="col-md-6">
+				<h5><b>Nombre</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.usuario.nombre}}</h6>
+			</div>
+			
+			<div class="col-md-3">
+				<h5><b>Sexo</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.usuario.sexo}}</h6>
+			</div>
+			
+			<div class="col-md-3">
+				<h5><b>Fecha de Nacimiento</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.date}}</h6>
+			</div>
+		</div>
+		
+		<!-- 2ND ROW -->
+		
+		<div class="row">
+			<div class="col-md-6">
+				<h5><b>Complexi&oacute;n</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.usuario.complexion}}</h6>
+			</div>
+			
+			<div class="col-md-2">
+				<h5><b>Altura</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.usuario.altura}}</h6>
+			</div>
+			
+			<div class="col-md-2">
+				<h5><b>Peso</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.usuario.peso}}</h6>
+			</div>
+			
+			<div class="col-md-2">
+				<h5><b>IMC</b></h5>
+				<h6 style="margin-top: -1%"><b style="color: green">
+				<span ng-class="{
+					'valor-normal' : (UsuarioCtrl.imc >= 18 && UsuarioCtrl.imc <=30),
+					'valor-superior' : UsuarioCtrl.imc > 30,
+					'valor-inferior' : UsuarioCtrl.imc < 18
+				}">{{UsuarioCtrl.imc}}</span></b></h6>
+			</div>		
+		</div>
+		
+		<!-- 3RD ROW -->
+		
+		<div class="row">
+			<div class="col-md-6">
+				<h5><b>Preferencias Alimenticias</b></h5>
+				<div style="height: 70px; overflow: auto; border-style:solid; border-color: #bfbfbf; border-width: 1px">
+					<table >
+						<tbody>
+							<tr ng-repeat="preferencia in UsuarioCtrl.usuario.preferenciasAlimenticias">
+								<td><h6>{{preferencia}}</h6></td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>				
+			</div>
+			
+			
+			<div class="col-md-6">
+				<h5><b>Comidas que le disgustan</b></h5>
+				<div style="height: 70px; overflow: auto; border-style:solid; border-color: #bfbfbf; border-width: 1px">
+					<table >
+						<tbody>
+							<tr ng-repeat="comida in UsuarioCtrl.usuario.palabrasQueDisgustan">
+								<td><h6>{{comida}}</h6></td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>				
+			</div>			
+		</div>
+		
+		<!-- 4TH ROW -->
+		
+		<div class="row">
+			<div class="col-md-6">
+				<h5><b>Condiciones Preexistentes</b></h5>
+				<div style="height: 50px; overflow: auto; border-style:solid; border-color: #bfbfbf; border-width: 1px">
+					<table >
+						<tbody>
+							<tr ng-repeat="condicion in UsuarioCtrl.usuario.condicionesPreexistentes">
+								<td><h6>{{condicion.nombre}}</h6></td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>				
+			</div>
+			
+			<div class="col-md-6">
+				<h5><b>Rutina</b></h5>
+				<h6 style="margin-top: -1%">{{UsuarioCtrl.usuario.rutina}}</h6>
+			</div>	
+		</div>	
+		
+		<!-- 5TH ROW -->
+		
+		<div class="row">
+			<div class="col-md-12">
+				<h5><b>Recetas Favoritas</b></h5>
+				<div style="height: 70px; overflow: auto; border-style:solid; border-color: #bfbfbf; border-width: 1px">
+					<table >
+						<tbody>
+							<tr ng-repeat="receta in UsuarioCtrl.usuario.recetasFavoritas">
+								<td><h6>{{receta.nombrePlato}}</h6></td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>				
+			</div>	
+		</div>
+		
+		<!--  6TH ROW -->
+		
+		<div class="row">
+			<!--<div class="col-md-12">
+				<button type="button" class="btn btn-default" style="margin-left: 47%; margin-top: 2%"> <b>Volver</b></button>
+			</div>!-->
+		</div>
+	</form>
+</body>

@@ -1,0 +1,28 @@
+<div id="leftBar">
+    <div ng-controller="VerPerfilUsuario as usuario">
+        <div>
+            <img id="profile-image" src="images/no-image-profile.jpg">{{usuario.usuario.nombre}}
+        </div>
+        <hr>
+
+        <div align="left">
+            <a ui-sref="perfilDeUsuario({nombre: usuario.usuario.nombre})"><h5>Ver Perfil</h5></a>
+        </div>
+
+        <div align="left" >
+            <a ui-sref="verRecetas"><h5>Ver Recetas</h5></a>
+        </div>
+
+        <div align="left" >
+            <a ui-sref="busquedaRecetas"><h5>Buscar Recetas</h5></a>
+        </div>
+
+        <div align="left">
+            <a ui-sref="monitoreoDeRecetas({nombre: usuario.usuario.nombre})"><h5>Recetas Mas Consultadas</h5></a>
+        </div>
+        <div align="left">
+            <a href="index.html"><h5>Cerrar sesión</h5></a>
+        </div>
+
+    </div>
+</div>

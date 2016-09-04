@@ -1,0 +1,29 @@
+<body>
+	<h3 align="center">Agregar ingrediente a {{IngredienteCtrl.receta}}</h3>
+	<form ng-submit="IngredienteCtrl.agregarIngrediente()">
+		<div align="center">
+			<div class="filtro">
+				<span>Busca Ingrediente o condimento </span>
+				<input ng-model="ingredienteBuscado" class="filtroingredientes">
+					<div class="tablaIngredientes" ng-controller="IngredientesCtrl as ingredientes">
+                		<select size="5" class="form-control" ng-model="IngredienteCtrl.nombre" required >
+                   			 <option ng-repeat="ingrediente in ingredientes.ingredientes | filter: ingredienteBuscado" value="{{ingrediente.nombre}}"> {{ingrediente.nombre}} </option>
+                		</select>
+            		</div>
+            
+            
+				<label style="margin-top:5%;" for="ex2">Cantidad</label>
+				<input class="form-control" id="ex2" type="text"  ng-model="IngredienteCtrl.cantidad" required>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Aceptar</button>
+				<button type="reset" class="btn btn-primary">Cancelar</button>
+				<button class="btn btn-primary" ng-click="IngredienteCtrl.volver()">Volver</button>
+			</div>
+		</div>
+		<!--<div class="col-xs-2">
+			<label for="ex2">Unidad de medida</label>
+			<input class="form-control" id="ex2" type="text">
+		</div>!-->
+	</form>
+</body>
